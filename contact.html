@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact BrandCrafters Kenya - Get in touch for questions about our handcrafted products, become an artisan partner, or customer support"
+    />
+    <meta name="theme-color" content="#1a472a" />
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+
+    <title>Contact Us - BrandCrafters Kenya</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-green: #1a472a;
+        --secondary-gold: #d4af37;
+        --kenyan-red: #ba0c2f;
+        --light-bg: #f8f9fa;
+        --dark-text: #2c3e50;
+        --border-color: #e0e0e0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--dark-text);
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        /* color: #fff; */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .top-bar {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 8px 0;
+        font-size: 14px;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .top-bar i {
+        color: var(--secondary-gold);
+        margin-right: 8px;
+      }
+
+      nav {
+        padding: 15px 0;
+        background: white;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--secondary-gold);
+        text-decoration: none;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-green);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 600px;
+        margin: 0 30px;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .search-bar .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary-gold);
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-icon {
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .nav-icon:hover {
+        color: var(--secondary-gold);
+      }
+
+      .badge {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--kenyan-red);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-green);
+        color: white;
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto 30px;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary-gold);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-gold);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary-gold);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Contact page specific styles */
+      .contact-header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: white;
+        padding: 80px 20px 60px;
+        text-align: center;
+      }
+
+      .contact-header h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-header p {
+        font-size: 20px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+      }
+
+      .contact-form {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form h2 {
+        color: var(--primary-green);
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--dark-text);
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-green);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .submit-btn {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        border: none;
+        padding: 15px 40px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        background: var(--primary-green);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(26, 71, 42, 0.3);
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .info-card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .info-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--secondary-gold), #f4d03f);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: var(--primary-green);
+        margin: 0 auto 20px;
+      }
+
+      .info-card h3 {
+        color: var(--primary-green);
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+
+      .info-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .info-card a {
+        color: var(--secondary-gold);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-green);
+      }
+
+      .contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .method-card {
+        background: white;
+        padding: 30px 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .method-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .method-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-green);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin: 0 auto 20px;
+      }
+
+      .method-card h3 {
+        color: var(--primary-green);
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      .method-card p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .method-link {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        padding: 10px 25px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+
+      .method-link:hover {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .business-hours {
+        background: var(--light-bg);
+        padding: 40px;
+        border-radius: 20px;
+        margin: 60px 0;
+      }
+
+      .business-hours h3 {
+        color: var(--primary-green);
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+
+      .hours-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .hours-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .hours-card h4 {
+        color: var(--primary-green);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hours-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .hours-list li:last-child {
+        border-bottom: none;
+      }
+
+      .day {
+        font-weight: 600;
+        color: var(--dark-text);
+      }
+
+      .time {
+        color: #666;
+      }
+
+      .map-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .map-section h3 {
+        color: var(--primary-green);
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .map-placeholder {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #e8f5e8, #d4edda);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: var(--primary-green);
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .map-placeholder i {
+        font-size: 60px;
+        margin-bottom: 15px;
+      }
+
+      .location-details {
+        text-align: left;
+        max-width: 600px;
+        margin: 20px auto 0;
+      }
+
+      .location-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: var(--light-bg);
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .location-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-green);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .faq-section {
+        margin-top: 80px;
+      }
+
+      .faq-section h3 {
+        text-align: center;
+        color: var(--primary-green);
+        margin-bottom: 40px;
+        font-size: 28px;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+      }
+
+      .faq-item {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        color: var(--primary-green);
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .faq-answer {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .nav-menu {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .search-bar {
+          flex: 1;
+          min-width: 200px;
+          margin: 0;
+        }
+
+        .contact-header h1 {
+          font-size: 32px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-methods {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .hours-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-container {
+          padding: 40px 15px;
+        }
+
+        .contact-form {
+          padding: 25px;
+        }
+
+        .business-hours {
+          padding: 25px 20px;
+        }
+
+        .map-section {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nairobi, Kenya</span>
+            <span style="margin-left: 20px">
+              <i class="fas fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </span>
+          </div>
+          <div>
+            <i class="fas fa-truck"></i>
+            <span>Free Delivery in Nairobi CBD</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">BC</div>
+            <span>BrandCrafters</span>
+          </a>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search for gifts, crafts, and more..."
+            />
+            <button type="button" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="active">Contact</a>
+          </div>
+
+          <div class="nav-icons">
+            <div class="nav-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </div>
+            <div class="nav-icon">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contact Header -->
+    <section class="contact-header">
+      <h1>Get in Touch</h1>
+      <p>
+        We'd love to hear from you. Send us a message and we'll respond as soon
+        as possible.
+      </p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="contact-container">
+      <!-- Contact Form and Info -->
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2><i class="fas fa-envelope"></i> Send us a Message</h2>
+          <form onsubmit="submitContactForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+254 700 123 456"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="product-inquiry">Product Inquiry</option>
+                <option value="order-support">Order Support</option>
+                <option value="artisan-partnership">
+                  Become an Artisan Partner
+                </option>
+                <option value="wholesale-inquiry">Wholesale Inquiry</option>
+                <option value="media-press">Media & Press</option>
+                <option value="feedback">Feedback & Suggestions</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us how we can help you..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>Speak with our friendly customer service team</p>
+            <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+            <p><a href="tel:+254722123456">+254 722 123 456</a></p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p>Send us an email and we'll get back to you within 24 hours</p>
+            <p>
+              <a href="mailto:info@brandcrafters.co.ke"
+                >info@brandcrafters.co.ke</a
+              >
+            </p>
+            <p>
+              <a href="mailto:support@brandcrafters.co.ke"
+                >support@brandcrafters.co.ke</a
+              >
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Our Office</h3>
+            <p>Come see us at our Nairobi headquarters</p>
+            <p>Westlands, Nairobi<br />Kenya, 00100</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Methods -->
+      <section class="contact-methods">
+        <div class="method-card">
+          <div class="method-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Quick responses for urgent inquiries</p>
+          <a
+            href="https://wa.me/254700123456"
+            class="method-link"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i> Chat Now
+          </a>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon">
+            <i class="fab fa-facebook-messenger"></i>
+          </div>
+          <h3>Facebook Messenger</h3>
+          <p>Connect with us on social media</p>
+          <a href="#" class="method-link">
+            <i class="fab fa-facebook-messenger"></i> Message Us
+          </a>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Live Chat</h3>
+          <p>Real-time support during business hours</p>
+          <a href="#" class="method-link" onclick="openLiveChat()">
+            <i class="fas fa-comments"></i> Start Chat
+          </a>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Customer Support</h3>
+          <p>Dedicated support for orders and products</p>
+          <a href="mailto:support@brandcrafters.co.ke" class="method-link">
+            <i class="fas fa-headset"></i> Get Help
+          </a>
+        </div>
+      </section>
+
+      <!-- Business Hours -->
+      <section class="business-hours">
+        <h3>Business Hours</h3>
+        <div class="hours-grid">
+          <div class="hours-card">
+            <h4>
+              <i class="fas fa-phone"></i>
+              Customer Service
+            </h4>
+            <ul class="hours-list">
+              <li>
+                <span class="day">Monday - Friday</span
+                ><span class="time">8:00 AM - 6:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Saturday</span
+                ><span class="time">9:00 AM - 4:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Sunday</span><span class="time">Closed</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hours-card">
+            <h4>
+              <i class="fas fa-building"></i>
+              Office Hours
+            </h4>
+            <ul class="hours-list">
+              <li>
+                <span class="day">Monday - Friday</span
+                ><span class="time">9:00 AM - 5:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Saturday</span
+                ><span class="time">10:00 AM - 2:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Sunday</span><span class="time">Closed</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hours-card">
+            <h4>
+              <i class="fas fa-truck"></i>
+              Delivery
+            </h4>
+            <ul class="hours-list">
+              <li>
+                <span class="day">Monday - Friday</span
+                ><span class="time">8:00 AM - 6:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Saturday</span
+                ><span class="time">9:00 AM - 3:00 PM</span>
+              </li>
+              <li>
+                <span class="day">Sunday</span
+                ><span class="time">Emergency Only</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="map-section">
+        <h3>Find Us</h3>
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>Interactive Map Coming Soon</p>
+        </div>
+        <div class="location-details">
+          <div class="location-item">
+            <div class="location-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <strong>BrandCrafters Headquarters</strong><br />
+              Westlands Business District, Nairobi, Kenya 00100
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <div>
+              <strong>Parking Available</strong><br />
+              Free parking for customers and visitors
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <div>
+              <strong>Public Transport</strong><br />
+              Accessible by matatu routes 46, 100, 102, and 111
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              How does the escrow payment system work?
+            </div>
+            <div class="faq-answer">
+              Our escrow system holds your deposit safely until you receive and
+              confirm your order. You only pay the balance after delivery
+              confirmation.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What are your delivery options?</div>
+            <div class="faq-answer">
+              We offer same-day delivery in Nairobi CBD, next-day delivery in
+              Nairobi, and 2-3 day delivery nationwide across Kenya.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Can I return or exchange items?</div>
+            <div class="faq-answer">
+              Yes! We accept returns within 7 days of delivery for items in
+              original condition. Exchanges are also available subject to
+              availability.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How can I become an artisan partner?</div>
+            <div class="faq-answer">
+              We're always looking for talented artisans! Contact us with
+              samples of your work, and our team will evaluate your products for
+              inclusion in our marketplace.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Do you offer wholesale pricing?</div>
+            <div class="faq-answer">
+              Yes, we offer competitive wholesale prices for bulk orders.
+              Contact our business team for custom quotations and terms.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What payment methods do you accept?</div>
+            <div class="faq-answer">
+              We accept M-Pesa, Visa, Mastercard, Airtel Money, and bank
+              transfers. All payments are processed securely through our escrow
+              system.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About BrandCrafters</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6">
+            Kenya's premier online marketplace for authentic handcrafted gifts
+            and products. Supporting local artisans with secure escrow payments.
+          </p>
+          <div class="social-icons">
+            <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-icon"><i class="fab fa-twitter"></i></div>
+            <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">How Escrow Works</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              Nairobi, Kenya
+            </li>
+            <li>
+              <i
+                class="fas fa-phone"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              +254 700 123 456
+            </li>
+            <li>
+              <i
+                class="fas fa-envelope"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              info@brandcrafters.co.ke
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 BrandCrafters Kenya. All rights reserved. | Secure Escrow
+          Payment System
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Add navigation styles
+      document.addEventListener("DOMContentLoaded", function () {
+        const style = document.createElement("style");
+        style.textContent = `
+                // .nav-menu {
+                //     display: flex;
+                //     gap: 30px;
+                //     align-items: center;
+                // }
+                
+                // .nav-menu a {
+                //     color: white;
+                //     text-decoration: none;
+                //     font-weight: 500;
+                //     padding: 8px 16px;
+                //     border-radius: 20px;
+                //     transition: all 0.3s;
+                // }
+                
+                // .nav-menu a:hover,
+                // .nav-menu a.active {
+                //     background: var(--primary-green);
+                //     color: white;
+                // }
+                
+                @media (max-width: 768px) {
+                    .nav-container {
+                        flex-wrap: wrap;
+                        gap: 15px;
+                    }
+                    
+                    .nav-menu {
+                        order: 3;
+                        width: 100%;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                    }
+                    
+                    .search-bar {
+                        flex: 1;
+                        min-width: 200px;
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      });
+
+      // Contact form submission
+      function submitContactForm(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = {};
+
+        for (let [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+
+        // Simulate form submission
+        const submitBtn = event.target.querySelector(".submit-btn");
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          alert(
+            `Thank you, ${data.firstName}! Your message has been sent successfully. We'll get back to you within 24 hours.`
+          );
+          event.target.reset();
+
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 2000);
+      }
+
+      // Live chat function
+      function openLiveChat() {
+        alert(
+          "Live chat will open here! This would integrate with a customer service platform like Intercom, Zendesk, or Crisp."
+        );
+      }
+    </script>
+  </body>
+</html>

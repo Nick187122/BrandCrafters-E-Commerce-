@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Premium Kenyan handcrafted gifts and products with secure escrow payment system"
+    />
+    <meta name="theme-color" content="#1a472a" />
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+
+    <title>BrandCrafters - Premium Kenyan Gift Shop</title>
+
+    <!-- Defer non-critical JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular-route.min.js"
+      defer
+    ></script>
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-green: #1a472a;
+        --secondary-gold: #d4af37;
+        --kenyan-red: #ba0c2f;
+        --light-bg: #f8f9fa;
+        --dark-text: #2c3e50;
+        --border-color: #e0e0e0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--dark-text);
+        overflow-x: hidden;
+      }
+
+      /* Optimized Preloader */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .preloader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--border-color);
+        border-top-color: var(--primary-green);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Optimized Header */
+      header {
+        background: white;
+        color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        will-change: transform;
+      }
+
+      .top-bar {
+        background: var(--primary-green);
+        padding: 8px 0;
+        font-size: 14px;
+        color: white;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar i {
+        color: var(--secondary-gold);
+        margin-right: 8px;
+      }
+
+      nav {
+        padding: 15px 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--secondary-gold);
+        text-decoration: none;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-green);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 600px;
+        margin: 0 30px;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .search-bar .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary-gold);
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .search-bar .search-btn:hover {
+        background: var(--primary-green);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .search-bar .search-btn:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+
+      .search-bar .clear-search-btn {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #666;
+        transition: all 0.3s ease;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search-bar .clear-search-btn:hover {
+        background: var(--kenyan-red);
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-icon {
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .nav-icon:hover {
+        color: var(--secondary-gold);
+      }
+
+      .badge {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--kenyan-red);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      /* Optimized Hero Section */
+      .hero {
+        background: linear-gradient(
+            rgba(26, 71, 42, 0.8),
+            rgba(26, 71, 42, 0.8)
+          ),
+          var(--primary-green);
+        color: #fff;
+        padding: 80px 20px;
+        text-align: center;
+        contain: layout;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .cta-button {
+        background: var(--secondary-gold);
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+      }
+
+      /* Categories */
+      .categories {
+        padding: 60px 20px;
+        background: white;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 36px;
+        color: var(--primary-green);
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary-gold);
+        border-radius: 2px;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .category-card {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        border-radius: 15px;
+        padding: 40px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .category-card:before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transition: all 0.5s;
+        opacity: 0;
+      }
+
+      .category-card:hover:before {
+        opacity: 1;
+      }
+
+      .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(26, 71, 42, 0.3);
+      }
+
+      .category-card i {
+        font-size: 48px;
+        color: var(--secondary-gold);
+        margin-bottom: 15px;
+      }
+
+      .category-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .category-price-range {
+        font-size: 14px;
+        color: var(--secondary-gold);
+        font-weight: 600;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Products */
+      .products {
+        padding: 60px 20px;
+        background: var(--light-bg);
+      }
+
+      .filters {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 10px 25px;
+        border: 2px solid var(--primary-green);
+        background: white;
+        color: var(--primary-green);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 15px;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        contain: layout;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        cursor: pointer;
+        will-change: transform;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        color: var(--primary-green);
+        position: relative;
+        overflow: hidden;
+        contain: layout;
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--kenyan-red);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 10px;
+      }
+
+      .product-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+
+      .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .product-price {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .price-full {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primary-green);
+      }
+
+      .price-deposit {
+        font-size: 13px;
+        color: var(--secondary-gold);
+        font-weight: 600;
+      }
+
+      .add-to-cart {
+        background: var(--primary-green);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 14px;
+      }
+
+      .add-to-cart:hover {
+        background: var(--secondary-gold);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: white;
+        border-radius: 20px;
+        max-width: 900px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        animation: slideUp 0.3s;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--kenyan-red);
+        color: white;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 10;
+      }
+
+      .modal-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 40px;
+      }
+
+      .modal-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120px;
+        color: var(--primary-green);
+      }
+
+      .modal-details h2 {
+        font-size: 28px;
+        color: var(--primary-green);
+        margin-bottom: 15px;
+      }
+
+      .modal-details p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .price-section {
+        background: var(--light-bg);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .price-row.total {
+        font-weight: bold;
+        font-size: 24px;
+        color: var(--primary-green);
+        border-top: 2px solid var(--border-color);
+        padding-top: 15px;
+        margin-top: 15px;
+      }
+
+      .escrow-info {
+        background: #fff3cd;
+        border-left: 4px solid var(--secondary-gold);
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+
+      .escrow-info i {
+        color: var(--secondary-gold);
+        margin-right: 8px;
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .quantity-selector button {
+        width: 35px;
+        height: 35px;
+        border: 2px solid var(--primary-green);
+        background: white;
+        color: var(--primary-green);
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s;
+      }
+
+      .quantity-selector button:hover {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .quantity-selector input {
+        width: 60px;
+        text-align: center;
+        border: 2px solid var(--border-color);
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      /* Cart Sidebar */
+      .cart-sidebar {
+        position: fixed;
+        right: -450px;
+        top: 0;
+        width: 450px;
+        height: 100%;
+        background: white;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s;
+        z-index: 3000;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cart-sidebar.active {
+        right: 0;
+      }
+
+      .cart-header {
+        background: var(--primary-green);
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .cart-header h3 {
+        font-size: 22px;
+      }
+
+      .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+      }
+
+      .cart-item {
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      .cart-item-image {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: var(--primary-green);
+      }
+
+      .cart-item-details {
+        flex: 1;
+      }
+
+      .cart-item-name {
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 5px;
+      }
+
+      .cart-item-price {
+        color: var(--secondary-gold);
+        font-weight: bold;
+      }
+
+      .cart-item-remove {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--kenyan-red);
+        color: white;
+        border: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .cart-footer {
+        border-top: 2px solid var(--border-color);
+        padding: 20px;
+      }
+
+      .cart-total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primary-green);
+        margin-bottom: 15px;
+      }
+
+      .checkout-btn {
+        width: 100%;
+        padding: 15px;
+        background: var(--secondary-gold);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .checkout-btn:hover {
+        background: var(--primary-green);
+      }
+
+      /* Checkout Section */
+      .checkout {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 450px;
+        gap: 30px;
+      }
+
+      .checkout-form {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-section {
+        margin-bottom: 30px;
+      }
+
+      .form-section h3 {
+        color: var(--primary-green);
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--dark-text);
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 15px;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-green);
+      }
+
+      .payment-methods {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .payment-method {
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        padding: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+      }
+
+      .payment-method:hover,
+      .payment-method.active {
+        border-color: var(--primary-green);
+        background: rgba(26, 71, 42, 0.05);
+      }
+
+      .payment-method i {
+        font-size: 30px;
+        color: var(--primary-green);
+        margin-bottom: 8px;
+      }
+
+      .order-summary {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+        position: sticky;
+        top: 100px;
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .summary-total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--primary-green);
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid var(--primary-green);
+      }
+
+      /* Escrow Status */
+      .escrow-status {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 40px auto;
+      }
+
+      .status-steps {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        position: relative;
+      }
+
+      .status-steps:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        height: 3px;
+        background: var(--border-color);
+      }
+
+      .status-step {
+        flex: 1;
+        text-align: center;
+        position: relative;
+      }
+
+      .step-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: white;
+        border: 3px solid var(--border-color);
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #999;
+        position: relative;
+        z-index: 1;
+      }
+
+      .status-step.completed .step-circle {
+        background: var(--primary-green);
+        border-color: var(--primary-green);
+        color: white;
+      }
+
+      .status-step.active .step-circle {
+        background: var(--secondary-gold);
+        border-color: var(--secondary-gold);
+        color: white;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+        }
+      }
+
+      .step-label {
+        font-size: 14px;
+        color: var(--dark-text);
+        font-weight: 500;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-green);
+        color: white;
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto 30px;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary-gold);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-gold);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary-gold);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .nav-menu {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .search-bar {
+          flex: 1;
+          min-width: 200px;
+          margin: 0;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .modal-body {
+          grid-template-columns: 1fr;
+        }
+
+        .checkout-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .order-summary {
+          position: static;
+        }
+
+        .cart-sidebar {
+          width: 100%;
+          right: -100%;
+        }
+
+        .status-steps {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .status-steps:before {
+          display: none;
+        }
+      }
+
+      /* Animations */
+      .fade-in {
+        animation: fadeIn 0.5s;
+      }
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .empty-state i {
+        font-size: 80px;
+        color: var(--border-color);
+        margin-bottom: 20px;
+      }
+
+      .empty-state h3 {
+        color: var(--dark-text);
+        margin-bottom: 10px;
+      }
+
+      .empty-state p {
+        color: #666;
+      }
+
+      /* Success Message */
+      .success-message {
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .success-message i {
+        color: #28a745;
+      }
+
+      /* M-Pesa Style */
+      .mpesa-input {
+        background: #f8f9fa;
+        border: 2px solid #28a745;
+      }
+
+      .mpesa-badge {
+        display: inline-block;
+        background: #28a745;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: bold;
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body ng-controller="MainController">
+    <!-- Preloader -->
+    <div class="preloader" ng-class="{'hidden': !loading}">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nairobi, Kenya</span>
+            <span style="margin-left: 20px">
+              <i class="fas fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </span>
+          </div>
+          <div>
+            <i class="fas fa-truck"></i>
+            <span>Free Delivery in Nairobi CBD</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-container">
+          <a href="#" class="logo" ng-click="goToHome()">
+            <div class="logo-icon">BC</div>
+            <span>BrandCrafters</span>
+          </a>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search for gifts, crafts, and more..."
+              ng-model="searchQuery"
+              ng-change="searchProducts()"
+              ng-keypress="handleSearchKeyPress($event)"
+            />
+            <button
+              ng-click="clearSearch()"
+              ng-if="searchQuery"
+              class="clear-search-btn"
+              type="button"
+              title="Clear search"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            <button ng-click="performSearch()" type="button" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="nav-icons">
+            <div class="nav-icon" ng-click="toggleCart()">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" ng-if="cart.length > 0">{{cart.length}}</span>
+            </div>
+            <div class="nav-icon" ng-click="showOrders()">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="nav-icon">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div ng-show="currentView === 'home'">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Discover Authentic Kenyan Crafts</h1>
+        <p>
+          Premium gifts handcrafted by local artisans | Secure Escrow Payment
+        </p>
+        <button class="cta-button" ng-click="scrollToProducts()">
+          Shop Now
+        </button>
+      </section>
+
+      <!-- Categories -->
+      <section class="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+          <div
+            class="category-card"
+            ng-repeat="category in categories"
+            ng-click="filterByCategory(category.name)"
+          >
+            <i class="fas fa-{{category.icon}}"></i>
+            <h3>{{category.name}}</h3>
+            <p>{{category.count}} items</p>
+            <div
+              class="category-price-range"
+              ng-if="category.minPrice && category.maxPrice"
+            >
+              <span ng-if="category.minPrice === category.maxPrice">
+                KSh {{category.minPrice | number:0}}
+              </span>
+              <span ng-if="category.minPrice !== category.maxPrice">
+                KSh {{category.minPrice | number:0}} - {{category.maxPrice |
+                number:0}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products -->
+      <section class="products" id="products">
+        <h2 class="section-title">
+          <span ng-if="!searchQuery">Featured Products</span>
+          <span ng-if="searchQuery">
+            Search Results for "{{searchQuery}}" ({{filteredProducts.length}}
+            found)
+          </span>
+        </h2>
+
+        <div class="filters">
+          <button
+            class="filter-btn"
+            ng-class="{'active': selectedCategory === 'All'}"
+            ng-click="filterByCategory('All')"
+          >
+            All Products
+          </button>
+          <button
+            class="filter-btn"
+            ng-class="{'active': selectedCategory === category.name}"
+            ng-repeat="category in categories"
+            ng-click="filterByCategory(category.name)"
+          >
+            {{category.name}}
+          </button>
+        </div>
+
+        <div class="product-grid">
+          <div
+            class="product-card"
+            ng-repeat="product in filteredProducts"
+            ng-click="openProductModal(product)"
+          >
+            <div class="product-image">
+              <i class="fas fa-{{product.icon}}"></i>
+              <span class="product-badge" ng-if="product.badge"
+                >{{product.badge}}</span
+              >
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">{{product.name}}</h3>
+              <p class="product-description">{{product.description}}</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-full"
+                    >KSh {{product.price | number:0}}</span
+                  >
+                  <span class="price-deposit"
+                    >Deposit: KSh {{product.deposit | number:0}}</span
+                  >
+                </div>
+                <button
+                  class="add-to-cart"
+                  ng-click="addToCart(product, $event)"
+                >
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" ng-class="{'active': showModal}">
+      <div class="modal-content" ng-if="selectedProduct">
+        <button class="modal-close" ng-click="closeModal()">&times;</button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <i class="fas fa-{{selectedProduct.icon}}"></i>
+          </div>
+          <div class="modal-details">
+            <h2>{{selectedProduct.name}}</h2>
+            <p>
+              {{selectedProduct.fullDescription || selectedProduct.description}}
+            </p>
+
+            <div class="price-section">
+              <div class="price-row">
+                <span>Full Price:</span>
+                <span>KSh {{selectedProduct.price | number:0}}</span>
+              </div>
+              <div class="price-row">
+                <span
+                  >Initial Deposit ({{selectedProduct.depositPercent}}%):</span
+                >
+                <span style="color: var(--secondary-gold)"
+                  >KSh {{selectedProduct.deposit | number:0}}</span
+                >
+              </div>
+              <div class="price-row">
+                <span>Balance on Delivery:</span>
+                <span
+                  >KSh {{(selectedProduct.price - selectedProduct.deposit) |
+                  number:0}}</span
+                >
+              </div>
+              <div class="price-row total">
+                <span>Total (×{{productQuantity}}):</span>
+                <span
+                  >KSh {{selectedProduct.price * productQuantity |
+                  number:0}}</span
+                >
+              </div>
+            </div>
+
+            <div class="escrow-info">
+              <i class="fas fa-shield-alt"></i>
+              <strong>Escrow Protection:</strong> Your deposit is held securely
+              until delivery is confirmed. Pay the balance only after receiving
+              your order.
+            </div>
+
+            <div class="quantity-selector">
+              <button ng-click="decreaseQuantity()">-</button>
+              <input
+                type="number"
+                ng-model="productQuantity"
+                min="1"
+                max="10"
+              />
+              <button ng-click="increaseQuantity()">+</button>
+            </div>
+
+            <button
+              class="cta-button"
+              style="width: 100%"
+              ng-click="addToCartFromModal()"
+            >
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" ng-class="{'active': showCart}">
+      <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+        <button class="modal-close" ng-click="toggleCart()">&times;</button>
+      </div>
+
+      <div class="cart-items" ng-if="cart.length > 0">
+        <div class="cart-item" ng-repeat="item in cart">
+          <div class="cart-item-image">
+            <i class="fas fa-{{item.icon}}"></i>
+          </div>
+          <div class="cart-item-details">
+            <div class="cart-item-name">{{item.name}}</div>
+            <div class="cart-item-price">
+              KSh {{item.price | number:0}} × {{item.quantity}}
+            </div>
+            <div style="font-size: 12px; color: #666; margin-top: 5px">
+              Deposit: KSh {{item.deposit * item.quantity | number:0}}
+            </div>
+          </div>
+          <button class="cart-item-remove" ng-click="removeFromCart($index)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="empty-state" ng-if="cart.length === 0">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Your cart is empty</h3>
+        <p>Add some products to get started!</p>
+      </div>
+
+      <div class="cart-footer" ng-if="cart.length > 0">
+        <div class="cart-total">
+          <span>Deposit Required:</span>
+          <span>KSh {{getTotalDeposit() | number:0}}</span>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            text-align: right;
+          "
+        >
+          Total: KSh {{getCartTotal() | number:0}}
+        </div>
+        <button class="checkout-btn" ng-click="proceedToCheckout()">
+          <i class="fas fa-lock"></i> Secure Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Checkout View -->
+    <div ng-show="currentView === 'checkout'" class="checkout">
+      <h2 class="section-title">Secure Checkout</h2>
+
+      <div class="checkout-grid">
+        <div class="checkout-form">
+          <div class="form-section">
+            <h3><i class="fas fa-user"></i> Personal Information</h3>
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input
+                type="text"
+                ng-model="checkoutData.fullName"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input
+                type="email"
+                ng-model="checkoutData.email"
+                placeholder="john@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label
+                >Phone Number * <span class="mpesa-badge">M-PESA</span></label
+              >
+              <input
+                type="tel"
+                ng-model="checkoutData.phone"
+                class="mpesa-input"
+                placeholder="0700123456"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Delivery Address</h3>
+            <div class="form-group">
+              <label>County *</label>
+              <select ng-model="checkoutData.county" required>
+                <option value="">Select County</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Eldoret">Eldoret</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Street Address *</label>
+              <input
+                type="text"
+                ng-model="checkoutData.address"
+                placeholder="123 Kenyatta Avenue"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Additional Notes</label>
+              <textarea
+                ng-model="checkoutData.notes"
+                rows="3"
+                placeholder="Apartment number, landmarks, etc."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+            <div class="payment-methods">
+              <div
+                class="payment-method"
+                ng-class="{'active': checkoutData.paymentMethod === 'mpesa'}"
+                ng-click="checkoutData.paymentMethod = 'mpesa'"
+              >
+                <i class="fas fa-mobile-alt"></i>
+                <div>M-PESA</div>
+              </div>
+              <div
+                class="payment-method"
+                ng-class="{'active': checkoutData.paymentMethod === 'card'}"
+                ng-click="checkoutData.paymentMethod = 'card'"
+              >
+                <i class="fas fa-credit-card"></i>
+                <div>Card</div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="cta-button"
+            style="width: 100%"
+            ng-click="placeOrder()"
+          >
+            <i class="fas fa-lock"></i> Place Order - Pay KSh
+            {{getTotalDeposit() | number:0}} Deposit
+          </button>
+        </div>
+
+        <div class="order-summary">
+          <h3 style="color: var(--primary-green); margin-bottom: 20px">
+            Order Summary
+          </h3>
+
+          <div ng-repeat="item in cart">
+            <div class="summary-item">
+              <span>{{item.name}} (×{{item.quantity}})</span>
+              <span>KSh {{item.price * item.quantity | number:0}}</span>
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <span>Subtotal</span>
+            <span>KSh {{getCartTotal() | number:0}}</span>
+          </div>
+
+          <div class="summary-item">
+            <span>Delivery Fee</span>
+            <span>KSh {{deliveryFee | number:0}}</span>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+            <span>KSh {{getCartTotal() + deliveryFee | number:0}}</span>
+          </div>
+
+          <div class="escrow-info" style="margin-top: 20px">
+            <i class="fas fa-info-circle"></i>
+            <strong>Escrow Payment:</strong><br />
+            • Pay {{depositPercent}}% now: KSh {{getTotalDeposit() |
+            number:0}}<br />
+            • Balance on delivery: KSh {{getCartTotal() + deliveryFee -
+            getTotalDeposit() | number:0}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders View -->
+    <div ng-show="currentView === 'orders'" class="checkout">
+      <h2 class="section-title">My Orders</h2>
+
+      <div ng-if="orders.length === 0" class="empty-state">
+        <i class="fas fa-box-open"></i>
+        <h3>No orders yet</h3>
+        <p>Start shopping to see your orders here!</p>
+        <button class="cta-button" ng-click="goToHome()">Start Shopping</button>
+      </div>
+
+      <div ng-repeat="order in orders" class="escrow-status">
+        <h3 style="color: var(--primary-green); margin-bottom: 10px">
+          Order #{{order.id}}
+        </h3>
+        <p style="color: #666; margin-bottom: 20px">
+          Placed on {{order.date}} | Total: KSh {{order.total | number:0}}
+        </p>
+
+        <div class="status-steps">
+          <div
+            class="status-step"
+            ng-class="{'completed': order.status >= 1, 'active': order.status === 1}"
+          >
+            <div class="step-circle">
+              <i class="fas fa-check" ng-if="order.status > 1"></i>
+              <i class="fas fa-wallet" ng-if="order.status === 1"></i>
+            </div>
+            <div class="step-label">Deposit Paid</div>
+            <div style="font-size: 12px; color: #666; margin-top: 5px">
+              KSh {{order.depositPaid | number:0}}
+            </div>
+          </div>
+
+          <div
+            class="status-step"
+            ng-class="{'completed': order.status >= 2, 'active': order.status === 2}"
+          >
+            <div class="step-circle">
+              <i class="fas fa-check" ng-if="order.status > 2"></i>
+              <i class="fas fa-box" ng-if="order.status === 2"></i>
+            </div>
+            <div class="step-label">Processing</div>
+          </div>
+
+          <div
+            class="status-step"
+            ng-class="{'completed': order.status >= 3, 'active': order.status === 3}"
+          >
+            <div class="step-circle">
+              <i class="fas fa-check" ng-if="order.status > 3"></i>
+              <i class="fas fa-truck" ng-if="order.status === 3"></i>
+            </div>
+            <div class="step-label">In Transit</div>
+          </div>
+
+          <div
+            class="status-step"
+            ng-class="{'completed': order.status >= 4, 'active': order.status === 4}"
+          >
+            <div class="step-circle">
+              <i class="fas fa-check" ng-if="order.status > 4"></i>
+              <i class="fas fa-home" ng-if="order.status === 4"></i>
+            </div>
+            <div class="step-label">Delivered</div>
+          </div>
+
+          <div
+            class="status-step"
+            ng-class="{'completed': order.status >= 5, 'active': order.status === 5}"
+          >
+            <div class="step-circle">
+              <i class="fas fa-check" ng-if="order.status > 5"></i>
+              <i class="fas fa-dollar-sign" ng-if="order.status === 5"></i>
+            </div>
+            <div class="step-label">Payment Complete</div>
+          </div>
+        </div>
+
+        <div ng-if="order.status === 4" class="success-message">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Ready for Final Payment!</strong><br />
+            Pay the remaining balance of KSh {{order.balanceRemaining |
+            number:0}} to complete your order.
+          </div>
+        </div>
+
+        <button
+          ng-if="order.status === 4"
+          class="cta-button"
+          style="width: 100%"
+          ng-click="payBalance(order)"
+        >
+          <i class="fas fa-mobile-alt"></i> Pay Balance - KSh
+          {{order.balanceRemaining | number:0}}
+        </button>
+
+        <div ng-if="order.status === 5" class="success-message">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Order Complete!</strong> Funds have been released to the
+            seller.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About BrandCrafters</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6">
+            Kenya's premier online marketplace for authentic handcrafted gifts
+            and products. Supporting local artisans with secure escrow payments.
+          </p>
+          <div class="social-icons">
+            <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-icon"><i class="fab fa-twitter"></i></div>
+            <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">How Escrow Works</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              Nairobi, Kenya
+            </li>
+            <li>
+              <i
+                class="fas fa-phone"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              +254 700 123 456
+            </li>
+            <li>
+              <i
+                class="fas fa-envelope"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              info@brandcrafters.co.ke
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 BrandCrafters Kenya. All rights reserved. | Secure Escrow
+          Payment System
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Optimized JavaScript initialization
+      document.addEventListener("DOMContentLoaded", function () {
+        var app = angular.module("brandCraftersApp", []);
+
+        app.controller("MainController", [
+          "$scope",
+          "$timeout",
+          function ($scope, $timeout) {
+            // Optimized initialization with lazy loading
+            var initData = {
+              loading: true,
+              currentView: "home",
+              showModal: false,
+              showCart: false,
+              selectedProduct: null,
+              productQuantity: 1,
+              searchQuery: "",
+              selectedCategory: "All",
+              deliveryFee: 300,
+              depositPercent: 30,
+            };
+
+            // Apply initialization data
+            Object.assign($scope, initData);
+
+            // Initialize cart and orders lazily
+            $scope.cart = JSON.parse(
+              localStorage.getItem("brandcrafters_cart") || "[]"
+            );
+            $scope.orders = JSON.parse(
+              localStorage.getItem("brandcrafters_orders") || "[]"
+            );
+            $scope.checkoutData = {};
+
+            // Dynamic categories based on actual product data
+            $scope.categoryIcons = {
+              Handicrafts: "hand-sparkles",
+              "Home Decor": "couch",
+              Jewelry: "gem",
+              "Art & Paintings": "palette",
+              "Traditional Wear": "tshirt",
+              "Gift Baskets": "gifts",
+            };
+
+            $scope.categoryDescriptions = {
+              Handicrafts: "Handmade crafts by local artisans",
+              "Home Decor": "Beautiful pieces for your home",
+              Jewelry: "Authentic African jewelry",
+              "Art & Paintings": "Original artworks and paintings",
+              "Traditional Wear": "Cultural clothing and accessories",
+              "Gift Baskets": "Curated gift collections",
+            };
+
+            // Function to generate categories from actual products
+            $scope.generateCategories = function () {
+              const categoryCount = {};
+
+              // Count products in each category
+              $scope.products.forEach(function (product) {
+                if (categoryCount[product.category]) {
+                  categoryCount[product.category]++;
+                } else {
+                  categoryCount[product.category] = 1;
+                }
+              });
+
+              // Generate category objects with real counts and price ranges
+              $scope.categories = Object.keys(categoryCount)
+                .map(function (categoryName) {
+                  const categoryProducts = $scope.products.filter(
+                    (p) => p.category === categoryName
+                  );
+                  const prices = categoryProducts.map((p) => p.price);
+                  const minPrice = Math.min(...prices);
+                  const maxPrice = Math.max(...prices);
+
+                  return {
+                    name: categoryName,
+                    icon: $scope.categoryIcons[categoryName] || "box",
+                    count: categoryCount[categoryName],
+                    minPrice: minPrice,
+                    maxPrice: maxPrice,
+                    products: categoryProducts,
+                    description:
+                      $scope.categoryDescriptions[categoryName] ||
+                      "Explore our " + categoryName.toLowerCase(),
+                  };
+                })
+                .sort(function (a, b) {
+                  return b.count - a.count; // Sort by count, highest first
+                });
+            };
+
+            // Products
+            $scope.products = [
+              {
+                id: 1,
+                name: "Maasai Beaded Necklace",
+                description:
+                  "Authentic handcrafted beaded necklace by Maasai artisans",
+                fullDescription:
+                  "This stunning piece is handcrafted by skilled Maasai women using traditional techniques passed down through generations. Each bead is carefully selected and arranged to create a unique pattern. The vibrant colors represent different aspects of Maasai culture.",
+                price: 3500,
+                deposit: 1050,
+                depositPercent: 30,
+                category: "Jewelry",
+                icon: "gem",
+                badge: "Trending",
+              },
+              {
+                id: 2,
+                name: "Kikuyu Kiondo Basket",
+                description:
+                  "Traditional woven sisal bag, perfect for shopping",
+                fullDescription:
+                  "Hand-woven by skilled artisans from Central Kenya using natural sisal fibers. These versatile baskets are both functional and stylish, perfect for market shopping, beach trips, or everyday use. Each basket supports local communities.",
+                price: 2800,
+                deposit: 840,
+                depositPercent: 30,
+                category: "Handicrafts",
+                icon: "shopping-bag",
+                badge: "Popular",
+              },
+              {
+                id: 3,
+                name: "African Wooden Sculpture",
+                description: "Hand-carved ebony wood elephant sculpture",
+                fullDescription:
+                  "Expertly carved from sustainable ebony wood by master craftsmen. This elegant elephant sculpture represents strength and wisdom in African culture. Perfect for home or office decoration.",
+                price: 5500,
+                deposit: 1650,
+                depositPercent: 30,
+                category: "Home Decor",
+                icon: "chess-rook",
+              },
+              {
+                id: 4,
+                name: "Batik Wall Hanging",
+                description: "Colorful batik art depicting Kenyan wildlife",
+                fullDescription:
+                  "Traditional batik technique on high-quality cotton fabric. Features vibrant depictions of Kenya's iconic wildlife including elephants, giraffes, and lions. Ready to hang with wooden frame included.",
+                price: 4200,
+                deposit: 1260,
+                depositPercent: 30,
+                category: "Art & Paintings",
+                icon: "image",
+                badge: "New",
+              },
+              {
+                id: 5,
+                name: "Kanga Fabric Set",
+                description: "Authentic cotton kanga with Swahili proverb",
+                fullDescription:
+                  "Traditional East African cotton fabric with beautiful patterns and inspiring Swahili sayings. Can be worn as clothing, used as home decor, or given as a meaningful gift.",
+                price: 1800,
+                deposit: 540,
+                depositPercent: 30,
+                category: "Traditional Wear",
+                icon: "tshirt",
+              },
+              {
+                id: 6,
+                name: "Soapstone Figurine",
+                description: "Hand-carved Kisii soapstone animal figurine",
+                fullDescription:
+                  "Beautifully crafted from pink Kisii soapstone by talented artisans. Each piece is unique with natural variations in color and pattern.",
+                price: 2200,
+                deposit: 660,
+                depositPercent: 30,
+                category: "Home Decor",
+                icon: "chess-knight",
+              },
+            ];
+
+            // Initialize filtered products
+            $scope.filteredProducts = $scope.products;
+
+            // Generate categories from actual product data
+            $scope.generateCategories();
+
+            // Optimized loading - faster initialization
+            $timeout(function () {
+              $scope.loading = false;
+            }, 300); // Reduced from potential longer timeout
+
+            // Optimized search functionality
+            $scope.searchProducts = function () {
+              if (!$scope.searchQuery) {
+                $scope.filteredProducts = $scope.products;
+                $scope.selectedCategory = "All";
+                return;
+              }
+
+              const query = $scope.searchQuery.toLowerCase();
+              $scope.filteredProducts = $scope.products.filter(function (
+                product
+              ) {
+                return (
+                  product.name.toLowerCase().includes(query) ||
+                  product.description.toLowerCase().includes(query) ||
+                  product.category.toLowerCase().includes(query)
+                );
+              });
+
+              // Update category filter to show search results
+              $scope.selectedCategory = "Search Results";
+            };
+
+            // Search button click handler
+            $scope.performSearch = function () {
+              $scope.searchProducts();
+              // Scroll to products section after search
+              $scope.scrollToProducts();
+            };
+
+            // Handle Enter key press in search input
+            $scope.handleSearchKeyPress = function (event) {
+              if (event.which === 13) {
+                // Enter key
+                event.preventDefault();
+                $scope.performSearch();
+              }
+            };
+
+            // Clear search function
+            $scope.clearSearch = function () {
+              $scope.searchQuery = "";
+              $scope.searchProducts(); // This will reset to show all products
+            };
+
+            // Filter by category with performance optimization
+            $scope.filterByCategory = function (category) {
+              $scope.selectedCategory = category;
+              if (category === "All") {
+                $scope.filteredProducts = $scope.products;
+              } else {
+                $scope.filteredProducts = $scope.products.filter(function (
+                  product
+                ) {
+                  return product.category === category;
+                });
+              }
+            };
+
+            // Function to refresh categories (useful for dynamic updates)
+            $scope.refreshCategories = function () {
+              $scope.generateCategories();
+            };
+
+            // Cart operations with localStorage optimization
+            $scope.addToCart = function (product, event) {
+              if (event) event.stopPropagation();
+
+              const existingItem = $scope.cart.find(
+                (item) => item.id === product.id
+              );
+              if (existingItem) {
+                existingItem.quantity += 1;
+              } else {
+                $scope.cart.push({ ...product, quantity: 1 });
+              }
+
+              // Debounced localStorage update
+              clearTimeout($scope.saveTimeout);
+              $scope.saveTimeout = setTimeout(() => {
+                localStorage.setItem(
+                  "brandcrafters_cart",
+                  JSON.stringify($scope.cart)
+                );
+              }, 100);
+            };
+
+            // Optimized modal operations
+            $scope.openProductModal = function (product) {
+              $scope.selectedProduct = product;
+              $scope.productQuantity = 1;
+              $scope.showModal = true;
+              document.body.style.overflow = "hidden"; // Prevent scroll
+            };
+
+            $scope.closeModal = function () {
+              $scope.showModal = false;
+              document.body.style.overflow = ""; // Restore scroll
+            };
+
+            // Additional optimized functions
+            $scope.toggleCart = function () {
+              $scope.showCart = !$scope.showCart;
+            };
+
+            $scope.removeFromCart = function (index) {
+              $scope.cart.splice(index, 1);
+              localStorage.setItem(
+                "brandcrafters_cart",
+                JSON.stringify($scope.cart)
+              );
+            };
+
+            $scope.getCartTotal = function () {
+              return $scope.cart.reduce(
+                (sum, item) => sum + item.price * item.quantity,
+                0
+              );
+            };
+
+            $scope.getTotalDeposit = function () {
+              return $scope.cart.reduce(
+                (sum, item) => sum + item.deposit * item.quantity,
+                0
+              );
+            };
+
+            // Scroll to products section
+            $scope.scrollToProducts = function () {
+              $timeout(function () {
+                const productsSection = document.getElementById("products");
+                if (productsSection) {
+                  productsSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }, 100);
+            };
+
+            // Navigation functions
+            $scope.goToHome = function () {
+              $scope.currentView = "home";
+              // Clear search when going home
+              $scope.searchQuery = "";
+              $scope.searchProducts();
+            };
+
+            $scope.proceedToCheckout = function () {
+              $scope.currentView = "checkout";
+              $scope.showCart = false;
+            };
+
+            $scope.showOrders = function () {
+              $scope.currentView = "orders";
+            };
+
+            // Close modals on escape key
+            document.addEventListener("keydown", function (e) {
+              if (e.key === "Escape") {
+                $scope.$apply(function () {
+                  $scope.closeModal();
+                  $scope.showCart = false;
+                });
+              }
+            });
+
+            // Cleanup timeout on destroy
+            $scope.$on("$destroy", function () {
+              clearTimeout($scope.saveTimeout);
+            });
+          },
+        ]);
+
+        // Bootstrap Angular after DOM is ready
+        angular.bootstrap(document, ["brandCraftersApp"]);
+      });
+    </script>
+  </body>
+</html>

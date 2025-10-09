@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover stories about Kenyan crafts, artisan techniques, and cultural heritage at the BrandCrafters blog"
+    />
+    <meta name="theme-color" content="#1a472a" />
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+
+    <title>Blog - Stories & Insights | BrandCrafters Kenya</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-green: #1a472a;
+        --secondary-gold: #d4af37;
+        --kenyan-red: #ba0c2f;
+        --light-bg: #f8f9fa;
+        --dark-text: #2c3e50;
+        --border-color: #e0e0e0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--dark-text);
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .top-bar {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 8px 0;
+        font-size: 14px;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .top-bar i {
+        color: var(--secondary-gold);
+        margin-right: 8px;
+      }
+
+      nav {
+        padding: 15px 0;
+        background: white;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--secondary-gold);
+        text-decoration: none;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-green);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 600px;
+        margin: 0 30px;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .search-bar .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary-gold);
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-icon {
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .nav-icon:hover {
+        color: var(--secondary-gold);
+      }
+
+      .badge {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--kenyan-red);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-green);
+        color: white;
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto 30px;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary-gold);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-gold);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary-gold);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Blog page specific styles */
+      .blog-header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: white;
+        padding: 80px 20px 60px;
+        text-align: center;
+      }
+
+      .blog-header h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .blog-header p {
+        font-size: 20px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .blog-categories {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .category-tab {
+        padding: 12px 24px;
+        background: white;
+        border: 2px solid var(--primary-green);
+        color: var(--primary-green);
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+      }
+
+      .category-tab:hover,
+      .category-tab.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-image {
+        width: 100%;
+        height: 240px;
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 60px;
+        position: relative;
+      }
+
+      .blog-category-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .blog-content {
+        padding: 30px;
+      }
+
+      .blog-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .blog-date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .read-time {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .blog-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .blog-excerpt {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .blog-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .author-info {
+        flex-grow: 1;
+      }
+
+      .author-name {
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-bottom: 2px;
+      }
+
+      .author-role {
+        font-size: 12px;
+        color: #666;
+      }
+
+      .read-more {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .read-more:hover {
+        background: var(--primary-green);
+        color: white;
+        transform: scale(1.05);
+      }
+
+      .featured-post {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .featured-post .blog-image {
+        height: 100%;
+        min-height: 300px;
+        border-radius: 20px;
+      }
+
+      .featured-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .featured-badge {
+        background: var(--kenyan-red);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 20px;
+        width: fit-content;
+      }
+
+      .featured-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .featured-excerpt {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .newsletter-section {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: white;
+        padding: 60px 40px;
+        border-radius: 25px;
+        text-align: center;
+        margin: 80px 0;
+      }
+
+      .newsletter-section h3 {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .newsletter-section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 15px;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .newsletter-btn {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+      }
+
+      .newsletter-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 60px;
+      }
+
+      .pagination-btn {
+        padding: 12px 20px;
+        border: 2px solid var(--border-color);
+        background: white;
+        color: var(--dark-text);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .pagination-btn:hover,
+      .pagination-btn.active {
+        border-color: var(--primary-green);
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .pagination-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .search-section {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 50px;
+      }
+
+      .blog-search {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .blog-search input {
+        flex: 1;
+        padding: 15px 20px;
+        border: 2px solid var(--border-color);
+        border-radius: 25px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .blog-search input:focus {
+        border-color: var(--primary-green);
+      }
+
+      .search-btn {
+        background: var(--primary-green);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .search-btn:hover {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .nav-menu {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .search-bar {
+          flex: 1;
+          min-width: 200px;
+          margin: 0;
+        }
+
+        .blog-header h1 {
+          font-size: 32px;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .featured-post {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-title {
+          font-size: 24px;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+          max-width: 300px;
+        }
+
+        .newsletter-section {
+          margin: 40px -20px;
+          padding: 40px 20px;
+          border-radius: 0;
+        }
+
+        .blog-search {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .blog-categories {
+          gap: 10px;
+        }
+
+        .category-tab {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nairobi, Kenya</span>
+            <span style="margin-left: 20px">
+              <i class="fas fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </span>
+          </div>
+          <div>
+            <i class="fas fa-truck"></i>
+            <span>Free Delivery in Nairobi CBD</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">BC</div>
+            <span>BrandCrafters</span>
+          </a>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search for gifts, crafts, and more..."
+            />
+            <button type="button" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="nav-icons">
+            <div class="nav-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </div>
+            <div class="nav-icon">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+      <h1>Stories & Insights</h1>
+      <p>Discover the rich heritage and craftsmanship behind every product</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="blog-container">
+      <!-- Search Section -->
+      <div class="search-section">
+        <div class="blog-search">
+          <input
+            type="text"
+            placeholder="Search articles..."
+            id="blogSearchInput"
+          />
+          <button class="search-btn" onclick="searchBlogs()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="blog-categories">
+        <a
+          href="#"
+          class="category-tab active"
+          onclick="filterByCategory('all')"
+          >All Posts</a
+        >
+        <a
+          href="#"
+          class="category-tab"
+          onclick="filterByCategory('artisan-stories')"
+          >Artisan Stories</a
+        >
+        <a
+          href="#"
+          class="category-tab"
+          onclick="filterByCategory('craft-guides')"
+          >Craft Guides</a
+        >
+        <a
+          href="#"
+          class="category-tab"
+          onclick="filterByCategory('cultural-heritage')"
+          >Cultural Heritage</a
+        >
+        <a
+          href="#"
+          class="category-tab"
+          onclick="filterByCategory('behind-scenes')"
+          >Behind the Scenes</a
+        >
+        <a
+          href="#"
+          class="category-tab"
+          onclick="filterByCategory('gift-guides')"
+          >Gift Guides</a
+        >
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid" id="blogGrid">
+        <!-- Featured Post -->
+        <article class="blog-card featured-post">
+          <div class="blog-image">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <div class="featured-content">
+            <span class="featured-badge">Featured</span>
+            <h2 class="featured-title">
+              The Art of Maasai Beadwork: A Tradition That Tells Stories
+            </h2>
+            <p class="featured-excerpt">
+              Discover how Maasai women transform simple beads into intricate
+              masterpieces that carry deep cultural meaning. Each color,
+              pattern, and design has a story to tell about love, courage, and
+              community.
+            </p>
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>December 15, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>8 min read</span>
+              </div>
+            </div>
+            <a href="#" class="read-more">Read Full Story</a>
+          </div>
+        </article>
+
+        <!-- Regular Blog Posts -->
+        <article class="blog-card" data-category="craft-guides">
+          <div class="blog-image">
+            <i class="fas fa-palette"></i>
+            <span class="blog-category-badge">Craft Guides</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>December 10, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>5 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">How Soapstone Sculptures Come to Life</h3>
+            <p class="blog-excerpt">
+              From the quarries of Kisii to your home, learn about the
+              fascinating process of creating beautiful soapstone sculptures.
+              Meet the artisans who transform raw stone into works of art.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">GM</div>
+              <div class="author-info">
+                <div class="author-name">Grace Moraa</div>
+                <div class="author-role">Craft Specialist</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="cultural-heritage">
+          <div class="blog-image">
+            <i class="fas fa-users"></i>
+            <span class="blog-category-badge">Cultural Heritage</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>December 8, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>6 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">
+              The Cultural Significance of Kanga Fabrics
+            </h3>
+            <p class="blog-excerpt">
+              Every Kanga tells a story through its vibrant colors and Swahili
+              proverbs. Explore the rich history and cultural importance of this
+              iconic East African fabric.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">AW</div>
+              <div class="author-info">
+                <div class="author-name">Amina Wanjiku</div>
+                <div class="author-role">Cultural Historian</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="artisan-stories">
+          <div class="blog-image">
+            <i class="fas fa-hammer"></i>
+            <span class="blog-category-badge">Artisan Stories</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>December 5, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>7 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">
+              Meet Joseph: The Master Wood Carver of Machakos
+            </h3>
+            <p class="blog-excerpt">
+              At 65, Joseph Musyoka has spent four decades perfecting his craft.
+              His intricate wooden sculptures reflect the beauty of Kenyan
+              wildlife and traditional African art.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">DK</div>
+              <div class="author-info">
+                <div class="author-name">David Kipkoech</div>
+                <div class="author-role">Story Writer</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="gift-guides">
+          <div class="blog-image">
+            <i class="fas fa-gift"></i>
+            <span class="blog-category-badge">Gift Guides</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>December 3, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>4 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">
+              Perfect Holiday Gifts: Authentic Kenyan Crafts
+            </h3>
+            <p class="blog-excerpt">
+              Looking for unique holiday gifts? Our curated selection of
+              authentic Kenyan handicrafts offers meaningful presents that
+              support local artisans.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">LN</div>
+              <div class="author-info">
+                <div class="author-name">Lucy Njeri</div>
+                <div class="author-role">Gift Curator</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="behind-scenes">
+          <div class="blog-image">
+            <i class="fas fa-camera"></i>
+            <span class="blog-category-badge">Behind the Scenes</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>November 30, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>5 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">Inside Our Artisan Workshop Network</h3>
+            <p class="blog-excerpt">
+              Take a virtual tour of our partner workshops across Kenya. See how
+              we ensure quality, fair trade practices, and sustainable
+              craftsmanship.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">MO</div>
+              <div class="author-info">
+                <div class="author-name">Michael Oduya</div>
+                <div class="author-role">Operations Manager</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="craft-guides">
+          <div class="blog-image">
+            <i class="fas fa-leaf"></i>
+            <span class="blog-category-badge">Craft Guides</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <div class="blog-date">
+                <i class="fas fa-calendar"></i>
+                <span>November 28, 2024</span>
+              </div>
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>6 min read</span>
+              </div>
+            </div>
+            <h3 class="blog-title">
+              Sustainable Materials in Traditional Kenyan Crafts
+            </h3>
+            <p class="blog-excerpt">
+              Discover how traditional Kenyan craftspeople have always been
+              environmentally conscious, using sustainable materials and
+              eco-friendly techniques.
+            </p>
+            <div class="blog-author">
+              <div class="author-avatar">EA</div>
+              <div class="author-info">
+                <div class="author-name">Elizabeth Achieng</div>
+                <div class="author-role">Sustainability Expert</div>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Newsletter Section -->
+      <section class="newsletter-section">
+        <h3>Stay Connected with Our Stories</h3>
+        <p>
+          Get the latest artisan stories, craft guides, and cultural insights
+          delivered to your inbox
+        </p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </section>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="pagination-btn" disabled>
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <a href="#" class="pagination-btn active">1</a>
+        <a href="#" class="pagination-btn">2</a>
+        <a href="#" class="pagination-btn">3</a>
+        <button class="pagination-btn">
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About BrandCrafters</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6">
+            Kenya's premier online marketplace for authentic handcrafted gifts
+            and products. Supporting local artisans with secure escrow payments.
+          </p>
+          <div class="social-icons">
+            <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-icon"><i class="fab fa-twitter"></i></div>
+            <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">How Escrow Works</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              Nairobi, Kenya
+            </li>
+            <li>
+              <i
+                class="fas fa-phone"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              +254 700 123 456
+            </li>
+            <li>
+              <i
+                class="fas fa-envelope"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              info@brandcrafters.co.ke
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 BrandCrafters Kenya. All rights reserved. | Secure Escrow
+          Payment System
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Add navigation styles
+      document.addEventListener("DOMContentLoaded", function () {
+        const style = document.createElement("style");
+        style.textContent = `
+                // .nav-menu {
+                //     display: flex;
+                //     gap: 30px;
+                //     align-items: center;
+                // }
+                
+                // .nav-menu a {
+                //     color: white;
+                //     text-decoration: none;
+                //     font-weight: 500;
+                //     padding: 8px 16px;
+                //     border-radius: 20px;
+                //     transition: all 0.3s;
+                // }
+                
+                // .nav-menu a:hover,
+                // .nav-menu a.active {
+                //     background: var(--primary-green);
+                //     color: white;
+                // }
+                
+                @media (max-width: 768px) {
+                    .nav-container {
+                        flex-wrap: wrap;
+                        gap: 15px;
+                    }
+                    
+                    .nav-menu {
+                        order: 3;
+                        width: 100%;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                    }
+                    
+                    .search-bar {
+                        flex: 1;
+                        min-width: 200px;
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      });
+
+      // Blog functionality
+      function filterByCategory(category) {
+        // Remove active class from all tabs
+        document.querySelectorAll(".category-tab").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+
+        // Add active class to clicked tab
+        event.target.classList.add("active");
+
+        // Filter blog posts
+        const blogCards = document.querySelectorAll(".blog-card");
+        blogCards.forEach((card) => {
+          if (category === "all" || card.dataset.category === category) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function searchBlogs() {
+        const searchTerm = document
+          .getElementById("blogSearchInput")
+          .value.toLowerCase();
+        const blogCards = document.querySelectorAll(".blog-card");
+
+        blogCards.forEach((card) => {
+          const title = card
+            .querySelector(".blog-title, .featured-title")
+            .textContent.toLowerCase();
+          const excerpt = card
+            .querySelector(".blog-excerpt, .featured-excerpt")
+            .textContent.toLowerCase();
+
+          if (
+            title.includes(searchTerm) ||
+            excerpt.includes(searchTerm) ||
+            searchTerm === ""
+          ) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+
+        // Simulate newsletter subscription
+        alert(
+          `Thank you for subscribing with ${email}! You'll receive our latest stories and insights.`
+        );
+        event.target.reset();
+      }
+
+      // Search on Enter key
+      document
+        .getElementById("blogSearchInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            searchBlogs();
+          }
+        });
+    </script>
+  </body>
+</html>

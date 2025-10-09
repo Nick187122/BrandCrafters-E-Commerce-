@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop authentic Kenyan handcrafted gifts and products at BrandCrafters - Premium quality with secure escrow payment"
+    />
+    <meta name="theme-color" content="#1a472a" />
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+
+    <title>Shop - Premium Kenyan Handcrafts | BrandCrafters</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-green: #1a472a;
+        --secondary-gold: #d4af37;
+        --kenyan-red: #ba0c2f;
+        --light-bg: #f8f9fa;
+        --dark-text: #2c3e50;
+        --border-color: #e0e0e0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--dark-text);
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .top-bar {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 8px 0;
+        font-size: 14px;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .top-bar i {
+        color: var(--secondary-gold);
+        margin-right: 8px;
+      }
+
+      nav {
+        padding: 15px 0;
+        background: white;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--secondary-gold);
+        text-decoration: none;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-green);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 600px;
+        margin: 0 30px;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .search-bar .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary-gold);
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-icon {
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .nav-icon:hover {
+        color: var(--secondary-gold);
+      }
+
+      .badge {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--kenyan-red);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-green);
+        color: white;
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto 30px;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary-gold);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-gold);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary-gold);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Shop page specific styles */
+      .shop-header {
+        background: linear-gradient(135deg, var(--primary-green), #2d5a3d);
+        color: white;
+        padding: 60px 20px 40px;
+        text-align: center;
+      }
+
+      .shop-header h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .shop-header p {
+        font-size: 18px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .shop-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .shop-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .shop-filters {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .filter-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .filter-btn {
+        background: white;
+        border: 2px solid var(--primary-green);
+        color: var(--primary-green);
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .filter-dropdown-content {
+        display: none;
+        position: absolute;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        z-index: 1000;
+        top: 100%;
+        left: 0;
+        margin-top: 5px;
+      }
+
+      .filter-dropdown-content.show {
+        display: block;
+      }
+
+      .filter-option {
+        padding: 12px 16px;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background 0.3s;
+      }
+
+      .filter-option:hover {
+        background: var(--light-bg);
+      }
+
+      .filter-option:last-child {
+        border-bottom: none;
+      }
+
+      .sort-controls {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .sort-select {
+        padding: 10px 15px;
+        border: 2px solid var(--border-color);
+        border-radius: 25px;
+        background: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .view-toggle {
+        display: flex;
+        gap: 5px;
+        background: white;
+        border: 2px solid var(--border-color);
+        border-radius: 25px;
+        padding: 5px;
+      }
+
+      .view-btn {
+        padding: 8px 12px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .view-btn.active {
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .search-results {
+        background: rgba(26, 71, 42, 0.1);
+        border-left: 4px solid var(--primary-green);
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        border-radius: 0 10px 10px 0;
+      }
+
+      .results-count {
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-bottom: 5px;
+      }
+
+      .clear-filters {
+        color: var(--secondary-gold);
+        cursor: pointer;
+        text-decoration: underline;
+        font-size: 14px;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .products-grid.list-view {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        cursor: pointer;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card.list-view {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .product-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        color: var(--primary-green);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card.list-view .product-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        font-size: 50px;
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--kenyan-red);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .product-info {
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      .product-card.list-view .product-info {
+        padding: 0;
+      }
+
+      .product-category {
+        color: var(--secondary-gold);
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .product-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .product-card.list-view .product-description {
+        -webkit-line-clamp: 3;
+      }
+
+      .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .product-price {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .price-full {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primary-green);
+      }
+
+      .price-deposit {
+        font-size: 13px;
+        color: var(--secondary-gold);
+        font-weight: 600;
+      }
+
+      .add-to-cart {
+        background: var(--primary-green);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .add-to-cart:hover {
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        transform: scale(1.05);
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 60px;
+      }
+
+      .pagination-btn {
+        padding: 10px 15px;
+        border: 2px solid var(--border-color);
+        background: white;
+        color: var(--dark-text);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .pagination-btn:hover,
+      .pagination-btn.active {
+        border-color: var(--primary-green);
+        background: var(--primary-green);
+        color: white;
+      }
+
+      .pagination-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .load-more {
+        display: block;
+        margin: 40px auto;
+        background: var(--secondary-gold);
+        color: var(--primary-green);
+        border: none;
+        padding: 15px 40px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .load-more:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+      }
+
+      .price-range-slider {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .price-inputs {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .price-input {
+        width: 80px;
+        padding: 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .empty-state {
+        text-align: center;
+        padding: 80px 20px;
+        color: #666;
+      }
+
+      .empty-state i {
+        font-size: 80px;
+        margin-bottom: 20px;
+        color: var(--border-color);
+      }
+
+      .empty-state h3 {
+        margin-bottom: 10px;
+        color: var(--dark-text);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .nav-menu {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .search-bar {
+          flex: 1;
+          min-width: 200px;
+          margin: 0;
+        }
+
+        .shop-header h1 {
+          font-size: 28px;
+        }
+
+        .shop-controls {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .shop-filters {
+          justify-content: center;
+        }
+
+        .sort-controls {
+          justify-content: center;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 20px;
+        }
+
+        .product-card.list-view {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .product-card.list-view .product-image {
+          width: 100%;
+          height: 200px;
+        }
+
+        .product-card.list-view .product-info {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .filter-dropdown-content {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nairobi, Kenya</span>
+            <span style="margin-left: 20px">
+              <i class="fas fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </span>
+          </div>
+          <div>
+            <i class="fas fa-truck"></i>
+            <span>Free Delivery in Nairobi CBD</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">BC</div>
+            <span>BrandCrafters</span>
+          </a>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search for gifts, crafts, and more..."
+              id="searchInput"
+            />
+            <button
+              type="button"
+              class="clear-search-btn"
+              id="clearSearch"
+              style="display: none"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            <button type="button" class="search-btn" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="nav-icons">
+            <div class="nav-icon" id="cartIcon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" id="cartCount">0</span>
+            </div>
+            <div class="nav-icon">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+      <h1>Premium Kenyan Handcrafts</h1>
+      <p>Discover authentic products crafted by talented Kenyan artisans</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="shop-container">
+      <!-- Shop Controls -->
+      <div class="shop-controls">
+        <div class="shop-filters">
+          <div class="filter-dropdown">
+            <button
+              class="filter-btn"
+              onclick="toggleDropdown('categoryFilter')"
+            >
+              <span>Category</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="filter-dropdown-content" id="categoryFilter">
+              <div class="filter-option" onclick="filterByCategory('All')">
+                All Categories
+              </div>
+              <div
+                class="filter-option"
+                onclick="filterByCategory('Handicrafts')"
+              >
+                Handicrafts
+              </div>
+              <div class="filter-option" onclick="filterByCategory('Jewelry')">
+                Jewelry
+              </div>
+              <div
+                class="filter-option"
+                onclick="filterByCategory('Home Decor')"
+              >
+                Home Decor
+              </div>
+              <div
+                class="filter-option"
+                onclick="filterByCategory('Art & Paintings')"
+              >
+                Art & Paintings
+              </div>
+              <div
+                class="filter-option"
+                onclick="filterByCategory('Traditional Wear')"
+              >
+                Traditional Wear
+              </div>
+              <div
+                class="filter-option"
+                onclick="filterByCategory('Gift Baskets')"
+              >
+                Gift Baskets
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-dropdown">
+            <button class="filter-btn" onclick="toggleDropdown('priceFilter')">
+              <span>Price</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="filter-dropdown-content" id="priceFilter">
+              <div class="price-range-slider">
+                <label>Price Range (KSh)</label>
+                <div class="price-inputs">
+                  <input
+                    type="number"
+                    class="price-input"
+                    id="minPrice"
+                    placeholder="Min"
+                    min="0"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    class="price-input"
+                    id="maxPrice"
+                    placeholder="Max"
+                    min="0"
+                  />
+                  <button
+                    onclick="applyPriceFilter()"
+                    style="
+                      background: var(--primary-green);
+                      color: white;
+                      border: none;
+                      padding: 8px 12px;
+                      border-radius: 5px;
+                      cursor: pointer;
+                    "
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+              <div class="filter-option" onclick="filterByPrice(0, 2000)">
+                Under KSh 2,000
+              </div>
+              <div class="filter-option" onclick="filterByPrice(2000, 4000)">
+                KSh 2,000 - 4,000
+              </div>
+              <div class="filter-option" onclick="filterByPrice(4000, 6000)">
+                KSh 4,000 - 6,000
+              </div>
+              <div class="filter-option" onclick="filterByPrice(6000, 99999)">
+                Above KSh 6,000
+              </div>
+            </div>
+          </div>
+
+          <button class="filter-btn" onclick="clearAllFilters()">
+            <i class="fas fa-times"></i>
+            <span>Clear All</span>
+          </button>
+        </div>
+
+        <div class="sort-controls">
+          <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+            <option value="featured">Featured</option>
+            <option value="name-asc">Name A-Z</option>
+            <option value="name-desc">Name Z-A</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+          </select>
+
+          <div class="view-toggle">
+            <button
+              class="view-btn active"
+              onclick="switchView('grid')"
+              id="gridViewBtn"
+            >
+              <i class="fas fa-th-large"></i>
+            </button>
+            <button
+              class="view-btn"
+              onclick="switchView('list')"
+              id="listViewBtn"
+            >
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Results Info -->
+      <div class="search-results" id="searchResults" style="display: none">
+        <div class="results-count" id="resultsCount"></div>
+        <div>
+          <span class="clear-filters" onclick="clearSearch()"
+            >Clear search</span
+          >
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be loaded here by JavaScript -->
+      </div>
+
+      <!-- Load More Button -->
+      <button
+        class="load-more"
+        id="loadMoreBtn"
+        onclick="loadMoreProducts()"
+        style="display: none"
+      >
+        Load More Products
+      </button>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination" style="display: none">
+        <!-- Pagination will be generated by JavaScript -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About BrandCrafters</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6">
+            Kenya's premier online marketplace for authentic handcrafted gifts
+            and products. Supporting local artisans with secure escrow payments.
+          </p>
+          <div class="social-icons">
+            <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-icon"><i class="fab fa-twitter"></i></div>
+            <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">How Escrow Works</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              Nairobi, Kenya
+            </li>
+            <li>
+              <i
+                class="fas fa-phone"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              +254 700 123 456
+            </li>
+            <li>
+              <i
+                class="fas fa-envelope"
+                style="color: var(--secondary-gold); margin-right: 8px"
+              ></i>
+              info@brandcrafters.co.ke
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 BrandCrafters Kenya. All rights reserved. | Secure Escrow
+          Payment System
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Enhanced product data
+      const allProducts = [
+        {
+          id: 1,
+          name: "Maasai Beaded Necklace",
+          description:
+            "Authentic handcrafted beaded necklace by Maasai artisans with traditional patterns",
+          price: 3500,
+          deposit: 1050,
+          category: "Jewelry",
+          icon: "gem",
+          badge: "Trending",
+          featured: true,
+        },
+        {
+          id: 2,
+          name: "Kikuyu Kiondo Basket",
+          description:
+            "Traditional woven sisal bag, perfect for shopping and everyday use",
+          price: 2800,
+          deposit: 840,
+          category: "Handicrafts",
+          icon: "shopping-bag",
+          badge: "Popular",
+          featured: true,
+        },
+        {
+          id: 3,
+          name: "African Wooden Sculpture",
+          description:
+            "Hand-carved ebony wood elephant sculpture representing strength and wisdom",
+          price: 5500,
+          deposit: 1650,
+          category: "Home Decor",
+          icon: "chess-rook",
+          featured: false,
+        },
+        {
+          id: 4,
+          name: "Batik Wall Hanging",
+          description:
+            "Colorful batik art depicting Kenyan wildlife with wooden frame included",
+          price: 4200,
+          deposit: 1260,
+          category: "Art & Paintings",
+          icon: "image",
+          badge: "New",
+          featured: true,
+        },
+        {
+          id: 5,
+          name: "Kanga Fabric Set",
+          description:
+            "Authentic cotton kanga with beautiful patterns and Swahili sayings",
+          price: 1800,
+          deposit: 540,
+          category: "Traditional Wear",
+          icon: "tshirt",
+          featured: false,
+        },
+        {
+          id: 6,
+          name: "Soapstone Figurine",
+          description:
+            "Hand-carved Kisii soapstone animal figurine with natural color variations",
+          price: 2200,
+          deposit: 660,
+          category: "Home Decor",
+          icon: "chess-knight",
+          featured: false,
+        },
+        {
+          id: 7,
+          name: "Leather Sandals",
+          description:
+            "Handmade leather sandals with traditional Kenyan design patterns",
+          price: 3200,
+          deposit: 960,
+          category: "Traditional Wear",
+          icon: "shoe-prints",
+          featured: false,
+        },
+        {
+          id: 8,
+          name: "Beaded Bracelet Set",
+          description:
+            "Set of colorful beaded bracelets made by women's cooperatives",
+          price: 1500,
+          deposit: 450,
+          category: "Jewelry",
+          icon: "circle",
+          badge: "Best Seller",
+          featured: true,
+        },
+        {
+          id: 9,
+          name: "Wooden Salad Bowl",
+          description:
+            "Hand-carved olive wood salad bowl perfect for entertaining",
+          price: 2900,
+          deposit: 870,
+          category: "Home Decor",
+          icon: "bowl-food",
+          featured: false,
+        },
+        {
+          id: 10,
+          name: "Traditional Mask",
+          description:
+            "Authentic African wooden mask with intricate tribal designs",
+          price: 4800,
+          deposit: 1440,
+          category: "Art & Paintings",
+          icon: "theater-masks",
+          featured: false,
+        },
+        {
+          id: 11,
+          name: "Woven Table Runner",
+          description: "Beautifully woven table runner with geometric patterns",
+          price: 2100,
+          deposit: 630,
+          category: "Home Decor",
+          icon: "table",
+          featured: false,
+        },
+        {
+          id: 12,
+          name: "Copper Bracelet",
+          description:
+            "Handcrafted copper bracelet with health benefits and style",
+          price: 1200,
+          deposit: 360,
+          category: "Jewelry",
+          icon: "band-aid",
+          featured: false,
+        },
+      ];
+
+      let filteredProducts = [...allProducts];
+      let currentView = "grid";
+      let currentPage = 1;
+      let itemsPerPage = 9;
+      let currentFilters = {
+        category: "All",
+        minPrice: 0,
+        maxPrice: 99999,
+        search: "",
+      };
+      let cart = JSON.parse(localStorage.getItem("brandcrafters_cart")) || [];
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCartCount();
+        renderProducts();
+        setupEventListeners();
+      });
+
+      function setupEventListeners() {
+        // Search functionality
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const clearSearch = document.getElementById("clearSearch");
+
+        searchBtn.addEventListener("click", performSearch);
+        searchInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            performSearch();
+          }
+        });
+        searchInput.addEventListener("input", function () {
+          clearSearch.style.display = this.value ? "flex" : "none";
+        });
+        clearSearch.addEventListener("click", clearSearchHandler);
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".filter-dropdown")) {
+            document
+              .querySelectorAll(".filter-dropdown-content")
+              .forEach((dropdown) => {
+                dropdown.classList.remove("show");
+              });
+          }
+        });
+      }
+
+      function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        const isShowing = dropdown.classList.contains("show");
+
+        // Close all dropdowns
+        document.querySelectorAll(".filter-dropdown-content").forEach((d) => {
+          d.classList.remove("show");
+        });
+
+        // Toggle current dropdown
+        if (!isShowing) {
+          dropdown.classList.add("show");
+        }
+      }
+
+      function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+        if (productsToShow.length === 0) {
+          grid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                `;
+          return;
+        }
+
+        grid.innerHTML = productsToShow
+          .map(
+            (product) => `
+                <div class="product-card ${
+                  currentView === "list" ? "list-view" : ""
+                }" onclick="openProductModal(${product.id})">
+                    <div class="product-image">
+                        <i class="fas fa-${product.icon}"></i>
+                        ${
+                          product.badge
+                            ? `<span class="product-badge">${product.badge}</span>`
+                            : ""
+                        }
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${
+                          product.description
+                        }</p>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-full">KSh ${product.price.toLocaleString()}</span>
+                                <span class="price-deposit">Deposit: KSh ${product.deposit.toLocaleString()}</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(event, ${
+                              product.id
+                            })">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        updatePagination();
+      }
+
+      function updatePagination() {
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        const pagination = document.getElementById("pagination");
+
+        if (totalPages <= 1) {
+          pagination.style.display = "none";
+          return;
+        }
+
+        pagination.style.display = "flex";
+        pagination.innerHTML = `
+                <button class="pagination-btn" ${
+                  currentPage === 1 ? "disabled" : ""
+                } onclick="changePage(${currentPage - 1})">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                ${generatePageNumbers(totalPages)}
+                <button class="pagination-btn" ${
+                  currentPage === totalPages ? "disabled" : ""
+                } onclick="changePage(${currentPage + 1})">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            `;
+      }
+
+      function generatePageNumbers(totalPages) {
+        let pages = "";
+        for (let i = 1; i <= totalPages; i++) {
+          if (i === currentPage) {
+            pages += `<button class="pagination-btn active">${i}</button>`;
+          } else {
+            pages += `<button class="pagination-btn" onclick="changePage(${i})">${i}</button>`;
+          }
+        }
+        return pages;
+      }
+
+      function changePage(page) {
+        currentPage = page;
+        renderProducts();
+        document
+          .querySelector(".shop-container")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function filterByCategory(category) {
+        currentFilters.category = category;
+        currentPage = 1;
+        applyFilters();
+        document.querySelectorAll(".filter-dropdown-content").forEach((d) => {
+          d.classList.remove("show");
+        });
+      }
+
+      function filterByPrice(min, max) {
+        currentFilters.minPrice = min;
+        currentFilters.maxPrice = max;
+        currentPage = 1;
+        applyFilters();
+        document.querySelectorAll(".filter-dropdown-content").forEach((d) => {
+          d.classList.remove("show");
+        });
+      }
+
+      function applyPriceFilter() {
+        const minPrice = document.getElementById("minPrice").value || 0;
+        const maxPrice = document.getElementById("maxPrice").value || 99999;
+        filterByPrice(parseInt(minPrice), parseInt(maxPrice));
+      }
+
+      function applyFilters() {
+        filteredProducts = allProducts.filter((product) => {
+          const categoryMatch =
+            currentFilters.category === "All" ||
+            product.category === currentFilters.category;
+          const priceMatch =
+            product.price >= currentFilters.minPrice &&
+            product.price <= currentFilters.maxPrice;
+          const searchMatch =
+            !currentFilters.search ||
+            product.name
+              .toLowerCase()
+              .includes(currentFilters.search.toLowerCase()) ||
+            product.description
+              .toLowerCase()
+              .includes(currentFilters.search.toLowerCase()) ||
+            product.category
+              .toLowerCase()
+              .includes(currentFilters.search.toLowerCase());
+
+          return categoryMatch && priceMatch && searchMatch;
+        });
+
+        renderProducts();
+        updateSearchResults();
+      }
+
+      function updateSearchResults() {
+        const searchResults = document.getElementById("searchResults");
+        const resultsCount = document.getElementById("resultsCount");
+
+        if (
+          currentFilters.search ||
+          currentFilters.category !== "All" ||
+          currentFilters.minPrice > 0 ||
+          currentFilters.maxPrice < 99999
+        ) {
+          searchResults.style.display = "block";
+          resultsCount.textContent = `${filteredProducts.length} products found`;
+        } else {
+          searchResults.style.display = "none";
+        }
+      }
+
+      function clearAllFilters() {
+        currentFilters = {
+          category: "All",
+          minPrice: 0,
+          maxPrice: 99999,
+          search: "",
+        };
+        currentPage = 1;
+        document.getElementById("minPrice").value = "";
+        document.getElementById("maxPrice").value = "";
+        document.getElementById("searchInput").value = "";
+        document.getElementById("clearSearch").style.display = "none";
+        applyFilters();
+      }
+
+      function performSearch() {
+        const searchInput = document.getElementById("searchInput");
+        currentFilters.search = searchInput.value.trim();
+        currentPage = 1;
+        applyFilters();
+      }
+
+      function clearSearchHandler() {
+        document.getElementById("searchInput").value = "";
+        document.getElementById("clearSearch").style.display = "none";
+        currentFilters.search = "";
+        applyFilters();
+      }
+
+      function clearSearch() {
+        clearSearchHandler();
+      }
+
+      function sortProducts() {
+        const sortSelect = document.getElementById("sortSelect");
+        const sortBy = sortSelect.value;
+
+        switch (sortBy) {
+          case "name-asc":
+            filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+          case "name-desc":
+            filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+          case "price-asc":
+            filteredProducts.sort((a, b) => a.price - b.price);
+            break;
+          case "price-desc":
+            filteredProducts.sort((a, b) => b.price - a.price);
+            break;
+          case "newest":
+            filteredProducts.sort((a, b) => b.id - a.id);
+            break;
+          default:
+            filteredProducts.sort((a, b) => b.featured - a.featured);
+        }
+
+        renderProducts();
+      }
+
+      function switchView(view) {
+        currentView = view;
+        document
+          .getElementById("gridViewBtn")
+          .classList.toggle("active", view === "grid");
+        document
+          .getElementById("listViewBtn")
+          .classList.toggle("active", view === "list");
+        renderProducts();
+      }
+
+      function addToCart(event, productId) {
+        event.stopPropagation();
+        const product = allProducts.find((p) => p.id === productId);
+
+        const existingItem = cart.find((item) => item.id === productId);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            ...product,
+            quantity: 1,
+          });
+        }
+
+        localStorage.setItem("brandcrafters_cart", JSON.stringify(cart));
+        updateCartCount();
+
+        // Visual feedback
+        event.target.innerHTML = '<i class="fas fa-check"></i> Added';
+        event.target.style.background = "var(--secondary-gold)";
+        setTimeout(() => {
+          event.target.innerHTML = '<i class="fas fa-cart-plus"></i> Add';
+          event.target.style.background = "var(--primary-green)";
+        }, 1500);
+      }
+
+      function updateCartCount() {
+        const cartCount = document.getElementById("cartCount");
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+        cartCount.style.display = totalItems > 0 ? "flex" : "none";
+      }
+
+      function openProductModal(productId) {
+        // For now, just show an alert. In a real app, this would open a detailed product modal
+        const product = allProducts.find((p) => p.id === productId);
+        alert(
+          `Product: ${
+            product.name
+          }\nPrice: KSh ${product.price.toLocaleString()}\nDescription: ${
+            product.description
+          }`
+        );
+      }
+    </script>
+  </body>
+</html>
